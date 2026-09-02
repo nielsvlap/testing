@@ -7,12 +7,12 @@ menuBtn.addeventlistener("click", () => {
 
     const isOpen = navlinks.classlist.contains("open");
     menuBtn.setAttribute(
-        "class"
+        "class",
         isOpen ? "ri-close-line" : "ri-menu-3-line"
     );
 });
 
-navlinks.addeventlistener("click", () => {
-    navlinks.classlist.remove("open");
-    menuBtnIcon.setAttribute("class"), "ri-menu-3-line");
+navlinks.addEventListener("click", () => {
+navlinks.classList.remove("open");
+menuBtnIcon.setAttribute("class", "ri-menu-3-line");
 });
