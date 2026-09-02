@@ -1,18 +1,18 @@
-const menuBtn = document.getElementsById("menu-btn");
-const navlinks = document.getElementsById("nav-links");
-const menuBtnIcon = menuBtn.queryselector("i");
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
 
-menuBtn.addeventlistener("click", () => {
-    navlinks.classlist.toggle("open")
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
 
-    const isOpen = navlinks.classlist.contains("open");
-    menuBtn.setAttribute(
-        "class",
-        isOpen ? "ri-close-line" : "ri-menu-3-line"
-    );
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute(
+    "class",
+    isOpen ? "ri-close-line" : "ri-menu-3-line"
+  );
 });
 
-navlinks.addEventListener("click", () => {
-navlinks.classList.remove("open");
-menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+navLinks.addEventListener("click", () => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-3-line");
 });
