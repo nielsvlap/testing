@@ -245,8 +245,4 @@ header {
     url("assets/header.jpg");
     background-position: top center;
   }
-  .h1 {
-    color: var(--primary-color);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  }
 }
