@@ -11,12 +11,13 @@
     <title>Hotel De Zonne Vallei</title>
   </head>
   <body>
-    <header>
+    <header class="topbar">
       <nav>
         <div class="nav__header">
           <div class="nav__logo">
-            <a href="#"></a>
-            <img src="assets/logo.png" alt="Logo" class="LogoMain"/>
+              <a href="index.html">
+                <img src="assets/logo.png" alt="Hotel De Zonne Vallei">
+            </a>
           </div>
           <div class="nav__menu__btn" id="menu-btn">
             <i class="ri-menu-3-line"></i>
@@ -35,8 +36,171 @@
     </div>
       </nav>
     </header>
-    <h1>Hotel kamers test</h1>
-    <p>gewoon wat tekst</p>
+    <main class="container">
+    <section class="dashboard-header">
+        <div>
+            <h1>Onze kamers</h1>
+            <p>Bekijk onze kamers en reserveer direct.</p>
+        </div>
+        <button id="addRoomButton" class="primary-button hidden">+ Kamer toevoegen</button>
+    </section>
+    <!-- Kamer editor -->
+    <section id="roomEditor" class="editor hidden">
+        <div class="editor-header">
+            <div>
+                <h2 id="editorTitle">Nieuwe kamer</h2>
+                <p>Vul de gegevens van de kamer in.</p>
+            </div>
+            <button id="closeEditor" class="close-button"> × </button>
+        </div>
+        <form id="roomForm">
+            <input type="hidden"id="roomId">
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="roomName">Naam van de kamer</label>
+                    <input type="text" id="roomName" placeholder="Bijv. Deluxe Kamer" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomPrice">Prijs per nacht (€)</label>
+                    <input type="number" id="roomPrice" min="0" step="0.01" placeholder="149" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomGuests">Aantal gasten</label>
+                    <input type="number"id="roomGuests" min="1" placeholder="2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomBeds">Bedden</label>
+                    <input type="text" id="roomBeds" placeholder="1 tweepersoonsbed" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="roomDescription">Beschrijving</label>
+
+                <textarea id="roomDescription" placeholder="Beschrijf de kamer..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label class="upload-box">
+                    <input type="file" id="roomImage" accept="image/*">
+                    <span class="upload-icon">📷</span>
+                    <span>Klik om een foto te kiezen</span>
+                    <small>JPG, PNG of WEBP</small>
+                </label>
+            </div>
+            <div id="imagePreviewContainer" class="image-preview-container hidden">
+                <p>Voorbeeld:</p>
+                <img id="imagePreview" class="image-preview" alt="Voorbeeld">
+            </div>
+            <div class="form-buttons">
+                <button type="button" id="cancelButton" class="secondary-button">Annuleren</button>
+                <button type="submit" class="primary-button">Kamer opslaan</button>
+            </div>
+        </form>
+    </section>
+    <!--KAMERS-->
+    <section>
+        <div id="emptyState" class="empty-state">
+            <div class="empty-icon">🛏️</div>
+            <h2>Nog geen kamers</h2>
+            <p>Er zijn momenteel geen kamers beschikbaar.</p>
+        </div>
+        <div id="roomsGrid" class="rooms-grid"></div>
+    </section>
+</main>
+<!-- LOGIN MODAL-->
+<div id="loginModal" class="modal hidden">
+    <div class="login-modal">
+        <button id="closeLogin" class="modal-close">×</button>
+        <div class="login-icon">🔐</div>
+        <h2>Admin login</h2>
+        <p>Log in om kamers te beheren.</p>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Gebruikersnaam</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Wachtwoord</label>
+                <input type="password" id="password" required>
+            </div>
+            <p id="loginError" class="login-error"></p>
+            <button type="submit" class="primary-button login-button">Inloggen</button>
+        </form>
+    </div>
+</div>
+<!--BOEKING MODAL-->
+<div id="bookingModal" class="modal hidden">
+    <div class="booking-modal">
+        <button id="closeBooking" class="modal-close">×</button>
+        <h2>Kamer boeken</h2>
+        <p class="booking-room-name">Kamer:<strong id="bookingRoomName"></strong></p>
+        <form id="bookingForm">
+            <input type="hidden" id="bookingRoomId">
+            <!-- NAAM -->
+            <div class="form-group">
+                <label for="bookingName">Volledige naam</label>
+                <input type="text" id="bookingName" placeholder="John Pork" required>
+            </div>
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="bookingEmail">E-mailadres</label>
+                <input type="email" id="bookingEmail" placeholder="john@email.nl" required>
+            </div>
+            <!-- GASTEN -->
+            <div class="form-group">
+                <label for="bookingGuests">Aantal gasten</label>
+                <input type="number" id="bookingGuests" min="1" value="1" required>
+            </div>
+            <!-- DATUMS -->
+            <div class="date-grid">
+                <div class="form-group">
+                    <label for="checkIn">Aankomst</label>
+                    <input type="date" id="checkIn" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOut">Vertrek</label>
+                    <input type="date" id="checkOut" required>
+                </div>
+            </div>
+            <!-- OPMERKING -->
+            <div class="form-group">
+                <label for="bookingMessage">Opmerking (optioneel)</label>
+                <textarea id="bookingMessage" placeholder="Bijvoorbeeld: wij komen laat aan..."></textarea>
+            </div>
+            <!-- PRIJS -->
+            <div class="price-summary">
+                <div>
+                    <span>Prijs per nacht</span>
+                    <strong id="bookingNightPrice">€0,00</strong>
+                </div>
+                <div>
+                    <span>Aantal nachten</span>
+                    <strong id="bookingNights">0</strong>
+                </div>
+                <div class="total-price">
+                    <span>Totaal</span>
+                    <strong id="bookingTotal">€0,00</strong>
+                </div>
+            </div>
+            <button type="submit" class="primary-button booking-button">Boeking aanvragen</button>
+        </form>
+    </div>
+</div>
+<div id="deleteModal" class="modal hidden">
+    <div class="login-modal delete-modal">
+        <div class="login-icon">🗑️</div>
+        <h2>Kamer verwijderen</h2>
+        <p> Weet je zeker dat je deze kamer wilt verwijderen? </p>
+        <div class="form-buttons">
+            <button id="cancelDelete" type="button" class="secondary-button">Annuleren</button>
+            <button id="confirmDelete" type="button" class="primary-button">Verwijderen</button>
+        </div>
+    </div>
+</div>
     <script src="main.js"></script>
 </body>
 </html>
