@@ -50,7 +50,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
 }
 
 nav {
@@ -120,10 +119,9 @@ nav {
 }
 
 header {
-  max-width: var(--max-width);
   margin: auto;
   padding: 2rem 1rem;
-
+  width : 100%;
   display: grid;
   gap: 4rem 1rem;
 }
@@ -150,7 +148,6 @@ header {
   line-height: 4.5rem;
   color: var(--extra-light) !important;
   text-align: center;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .header__content p {
@@ -159,7 +156,6 @@ header {
   line-height: 1.75rem;
   color: var(--extra-light);
   text-align: center;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .header__btn {
@@ -792,3 +788,10 @@ textarea {
     font-size: 16px;
     padding: 14px;
 }
+
+.contact-from {
+    background: white;
+    border: 1px solid #e5e5e5;
+    max-width: 200px;
+}
+

@@ -44,7 +44,6 @@
         </div>
         <button id="addRoomButton" class="primary-button hidden">+ Kamer toevoegen</button>
     </section>
-    <!-- Kamer editor -->
     <section id="roomEditor" class="editor hidden">
         <div class="editor-header">
             <div>
@@ -55,7 +54,6 @@
         </div>
         <form id="roomForm">
             <input type="hidden"id="roomId">
-
             <div class="form-grid">
                 <div class="form-group">
                     <label for="roomName">Naam van de kamer</label>
@@ -79,8 +77,12 @@
             </div>
 
             <div class="form-group">
-                <label for="roomDescription">Beschrijving</label>
+                <label for="roomAvailable">Beschikbaar</label>
+                <input type="checkbox" id="roomAvailable">
+            </div>
 
+            <div class="form-group">
+                <label for="roomDescription">Beschrijving</label>
                 <textarea id="roomDescription" placeholder="Beschrijf de kamer..." required></textarea>
             </div>
             <div class="form-group">
@@ -101,7 +103,6 @@
             </div>
         </form>
     </section>
-    <!--KAMERS-->
     <section>
         <div id="emptyState" class="empty-state">
             <div class="empty-icon">🛏️</div>
@@ -111,7 +112,6 @@
         <div id="roomsGrid" class="rooms-grid"></div>
     </section>
 </main>
-<!-- LOGIN MODAL-->
 <div id="loginModal" class="modal hidden">
     <div class="login-modal">
         <button id="closeLogin" class="modal-close">×</button>
@@ -132,7 +132,6 @@
         </form>
     </div>
 </div>
-<!--BOEKING MODAL-->
 <div id="bookingModal" class="modal hidden">
     <div class="booking-modal">
         <button id="closeBooking" class="modal-close">×</button>
@@ -140,22 +139,18 @@
         <p class="booking-room-name">Kamer:<strong id="bookingRoomName"></strong></p>
         <form id="bookingForm">
             <input type="hidden" id="bookingRoomId">
-            <!-- NAAM -->
             <div class="form-group">
                 <label for="bookingName">Volledige naam</label>
                 <input type="text" id="bookingName" placeholder="John Pork" required>
             </div>
-            <!-- EMAIL -->
             <div class="form-group">
                 <label for="bookingEmail">E-mailadres</label>
                 <input type="email" id="bookingEmail" placeholder="john@email.nl" required>
             </div>
-            <!-- GASTEN -->
             <div class="form-group">
                 <label for="bookingGuests">Aantal gasten</label>
                 <input type="number" id="bookingGuests" min="1" value="1" required>
             </div>
-            <!-- DATUMS -->
             <div class="date-grid">
                 <div class="form-group">
                     <label for="checkIn">Aankomst</label>
@@ -166,12 +161,10 @@
                     <input type="date" id="checkOut" required>
                 </div>
             </div>
-            <!-- OPMERKING -->
             <div class="form-group">
                 <label for="bookingMessage">Opmerking (optioneel)</label>
                 <textarea id="bookingMessage" placeholder="Bijvoorbeeld: wij komen laat aan..."></textarea>
             </div>
-            <!-- PRIJS -->
             <div class="price-summary">
                 <div>
                     <span>Prijs per nacht</span>
