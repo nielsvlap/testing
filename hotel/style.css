@@ -126,6 +126,13 @@ nav {
   text-align: center;
 }
 
+.header__content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--extra-light);
+  text-align: center;
+}
+
 .header__container h1 {
   margin-bottom: 1rem;
   font-weight: 800;
@@ -799,7 +806,7 @@ textarea {
 }
 
 .navbar a:hover {
-    color: #eee568;
+    color: #F9F58B;
 }
 
 .hero {
@@ -837,12 +844,21 @@ textarea {
 }
 
 .subtitle {
-    color: #c9a96e;
+    color: #F9F58B;
     font-size: 14px;
     letter-spacing: 4px;
     font-weight: bold;
     margin-bottom: 12px;
 }
+
+.subtitle2 {
+    color: #B5925C;
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
 
 .hero h1 {
     font-size: clamp(55px, 8vw, 100px);
@@ -860,7 +876,7 @@ textarea {
 .button {
     display: inline-block;
     padding: 14px 30px;
-    background: #c9a96e;
+    background: #F9F58B;
     color: #1f2923;
     text-decoration: none;
     font-family: Arial, sans-serif;
@@ -871,13 +887,12 @@ textarea {
 }
 
 .button:hover {
-    background: white;
+    background:#FFFFFF;
     transform: translateY(-2px);
 }
 
 .menu-nav {
     min-height: 90px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -890,7 +905,7 @@ textarea {
 }
 
 .menu-nav a {
-    color: #1f2923;
+    color: #ffffff;
     text-decoration: none;
     font-family: Arial, sans-serif;
     font-size: 13px;
@@ -901,7 +916,7 @@ textarea {
 }
 
 .menu-nav a:hover {
-    opacity: 0.55;
+    color: #F9F58B;
 }
 
 .menu-section {
@@ -1031,15 +1046,11 @@ footer p {
 .form-group textarea {
     width: 100%;
     padding: 14px 16px;
-
     border: 1px solid #d6d6d6;
     border-radius: 6px;
-
     font-family: "Lato", sans-serif;
     font-size: 15px;
-
     outline: none;
-
     transition: 0.3s;
 }
 
@@ -1071,7 +1082,7 @@ footer p {
 }
 
 .contact-button:hover {
-    background-color: #967542;
+    background-color: #F9F58B;
 }
 
 .map {
@@ -1088,4 +1099,129 @@ footer p {
     height: 100;
     border: 0;
     display: block;   
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+  color: #B5925C;
+  text-align: center;
+  overflow: hidden;
+}
+
+.section__header::before {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 5rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F9F58B;
+  border-radius: 1rem;
+}
+
+.section__header::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 6px;
+  bottom: 0;
+  left: calc(50% + 3rem);
+  transform: translateX(-50%);
+  background-color: #F9F58B;
+  border-radius: 1rem;
+}
+
+.service {
+  overflow: hidden;
+}
+
+.service__grid {
+  margin-top: 4rem;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 2rem 1rem;
+}
+
+.service__grid::before {
+  position: absolute;
+  content: "";
+  height: calc(50% + 5rem);
+  width: 100vw;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F9F58B;
+  z-index: -1;
+}
+
+.service__card {
+  position: relative;
+  isolation: isolate;
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.service__card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  max-width: 10rem;
+  aspect-ratio: 1;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F9F58B;
+  border-radius: 100%;
+  z-index: -1;
+}
+
+.service__card img {
+  max-width: 100%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.service__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.service__card p {
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.75rem;
+}
+
+  .service__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+@media (width > 1024px) {
+  .service__grid {
+    gap: 2rem;
+  }
+
+  .service__card {
+    padding: 2rem;
+    flex-direction: row;
+  }
 }
