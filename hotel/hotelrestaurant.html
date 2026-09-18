@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
+    <title>Hotel Restaurant | La Belle</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
+
 <body>
-    <header class="topbar">
+    <header class="navbar">
       <nav>
         <div class="nav__header">
           <div class="nav__logo">
@@ -31,7 +29,53 @@
         </ul>
       </nav>
     </header>
-    <h1>hotel restaurant test</h1>
-    <p>testing</p>
+    <main>
+        <section id="restaurant" class="hero">
+            <img src="assets/hotelrestaurantkeuken.jpg">
+            <div class="hero-content">
+                <p class="subtitle">Hotel & Restaurant</p>
+                <h1>De Zonne Vallei</h1>
+                <p>
+                    Geniet van een sfeervol diner in ons stijlvolle
+                    hotelrestaurant.
+                </p>
+                <a href="#menu" class="button">Bekijk ons menu</a>
+            </div>
+        </section>
+        <section class="menu-nav">
+            <a href="#voorgerechten">Voorgerechten</a>
+            <a href="#hoofdgerechten">Hoofdgerechten</a>
+            <a href="#desserts">Desserts</a>
+            <a href="#dranken">Dranken</a>
+        </section>
+        <section id="menu" class="menu-section">
+            <div class="menu-intro">
+                <p class="subtitle">Onze kaart</p>
+                <h2>Menu</h2>
+                <p>
+                    Ontdek onze zorgvuldig samengestelde gerechten,
+                    bereid met verse en lokale ingrediënten.
+                </p>
+                  <h3>Openings Tijden</h3>
+                  <h4> Maandag t/m vrijdag</h4>
+                  <p>Ontbijt : 07:00 - 10:00</p>
+                  <p>Restaurant : 10:00 - 23:00</p>
+                  <h4>Zaterdag & zondag</h4>
+                  <p>Ontbijt : 08:00 - 10:30</p>
+                  <p>Restaurant : 10:30 - 23:00</p>
+            </div>
+            <div class="menu-image">
+                <img src="assets/menukaart.jpg" alt="Menukaart van het restaurant">
+                <div class="voorgerechten"></div>
+                <div></div>
+            </div>
+        </section>
+        <footer id="contact">
+            <h2>De Zonne Vallei</h2>
+            <p>Hotel & Restaurant</p>
+            <p>Voorbeeldstraat 12 · Amsterdam</p>
+            <p>+31 20 123 45 67</p>
+        </footer>
+    </main>
 </body>
 </html>

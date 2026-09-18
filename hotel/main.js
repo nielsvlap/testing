@@ -17,10 +17,19 @@ navLinks.addEventListener("click", () => {
   menuBtnIcon.setAttribute("class", "ri-menu-3-line");
 });
 
+// ==========================================
+// LOGIN STATUS
+// ==========================================
+
 let isAdmin =
     sessionStorage.getItem(
         "hotelAdminLoggedIn"
     ) === "true";
+
+
+// ==========================================
+// ELEMENTEN
+// ==========================================
 
 const adminButton = document.getElementById ("adminButton");
 const logoutButton = document.getElementById ("logoutButton");
@@ -48,6 +57,9 @@ const emptyState = document.getElementById ("emptyState");
 const deleteModal = document.getElementById ("deleteModal");
 const cancelDelete = document.getElementById ("cancelDelete");
 const confirmDelete = document.getElementById ("confirmDelete");
+// ==========================================
+// BOOKING ELEMENTEN
+// ==========================================
 const bookingModal = document.getElementById ("bookingModal");
 const closeBooking = document.getElementById ("closeBooking");
 const bookingForm = document.getElementById ("bookingForm");
@@ -62,14 +74,20 @@ const bookingMessage = document.getElementById ("bookingMessage");
 const bookingNightPrice = document.getElementById ("bookingNightPrice");
 const bookingNights = document.getElementById ("bookingNights");
 const bookingTotal = document.getElementById ("bookingTotal");
-
+// ==========================================
+// DATA
+// ==========================================
 let rooms = JSON.parse(localStorage.getItem("hotelRooms")) || [];
 let currentImage = "";
 let roomToDelete = null;
-
+// ==========================================
+// START
+// ==========================================
 updateAdminUI();
 renderRooms();
-
+// ==========================================
+// ADMIN UI
+// ==========================================
 function updateAdminUI() {
     if (isAdmin) {
         adminButton.classList.add("hidden");
@@ -82,6 +100,10 @@ function updateAdminUI() {
     }
     renderRooms();
 }
+
+// ==========================================
+// LOGIN
+// ==========================================
 
 adminButton.addEventListener("click",function() {
         loginModal.classList.remove("hidden");
@@ -102,10 +124,21 @@ loginModal.addEventListener("click",function(event) {
     }
 );
 
+// ==========================================
+// INLOGGEN
+// ==========================================
+
 loginForm.addEventListener("submit",function(event) {
         event.preventDefault();
         const username = document .getElementById("username").value;
         const password = document .getElementById("password").value;
+
+        /*
+            Gebruikersnaam:
+            admin
+            Wachtwoord:
+            hotel123
+        */
 
         if (
             username === "admin" &&
@@ -123,12 +156,20 @@ loginForm.addEventListener("submit",function(event) {
     }
 );
 
+// ==========================================
+// UITLOGGEN
+// ==========================================
+
 logoutButton.addEventListener("click",function() { isAdmin = false;
         sessionStorage.removeItem("hotelAdminLoggedIn");
         closeEditorFunction();
         updateAdminUI();
     }
 );
+
+// ==========================================
+// NIEUWE KAMER
+// ==========================================
 
 addRoomButton.addEventListener("click",openNewRoom);
 function openNewRoom() {
@@ -144,6 +185,10 @@ function openNewRoom() {
     roomEditor.scrollIntoView({behavior: "smooth"});
 }
 
+// ==========================================
+// EDITOR SLUITEN
+// ==========================================
+
 closeEditor.addEventListener("click",closeEditorFunction);
 cancelButton.addEventListener("click",closeEditorFunction);
 
@@ -154,6 +199,10 @@ function closeEditorFunction() {
     currentImage = "";
     imagePreviewContainer .classList .add("hidden");
 }
+
+// ==========================================
+// FOTO
+// ==========================================
 
 roomImage.addEventListener("change", function() {
         const file = this.files[0];
@@ -176,6 +225,10 @@ roomImage.addEventListener("change", function() {
     }
 );
 
+// ==========================================
+// KAMER OPSLAAN
+// ==========================================
+
 roomForm.addEventListener("submit", function(event) {
         event.preventDefault();
         if (!isAdmin) {
@@ -196,6 +249,7 @@ roomForm.addEventListener("submit", function(event) {
             alert("Vul alle velden in.");
             return;
         }
+        // Kamer bewerken
         if (roomId.value) {
             const index = rooms.findIndex(room => room.id === roomId.value);
             if (index !== -1) {
@@ -205,6 +259,7 @@ roomForm.addEventListener("submit", function(event) {
             }
         }
 
+        // Nieuwe kamer
         else {
             rooms.push({
                 id:Date.now().toString(),name,price,guests,beds,description,image:currentImage
@@ -216,10 +271,17 @@ roomForm.addEventListener("submit", function(event) {
     }
 );
 
+// ==========================================
+// OPSLAAN
+// ==========================================
+
 function saveRooms() {
     localStorage.setItem("hotelRooms",JSON.stringify(rooms)
     );
 }
+// ==========================================
+// KAMERS WEERGEVEN
+// ==========================================
 function renderRooms() {
     roomsGrid.innerHTML = "";
     if (rooms.length === 0) {
@@ -237,6 +299,7 @@ function renderRooms() {
         function(room) {
             const card = document.createElement("article");
             card.className = "room-card";
+            // Foto
             let imageHTML = "";
             if (room.image) {
                 imageHTML = `
@@ -255,6 +318,7 @@ function renderRooms() {
                     <div class="room-image-placeholder">🛏️</div>
                 `;
             }
+            // Admin knoppen
             let adminButtons = "";
             if (isAdmin) {
                 adminButtons = `
@@ -264,6 +328,7 @@ function renderRooms() {
                     </div>
                 `;
             }
+            // Kamerkaart
             card.innerHTML = `
                 ${imageHTML}
                 <div class="room-content">
@@ -285,6 +350,7 @@ function renderRooms() {
             roomsGrid.appendChild(card);
         }
     );
+    // Edit knoppen
     document .querySelectorAll(".edit-button")
         .forEach(
             button => {
@@ -302,6 +368,9 @@ function renderRooms() {
 
             }
         );
+
+
+    // Delete knoppen
 
     document
         .querySelectorAll(
@@ -323,6 +392,9 @@ function renderRooms() {
 
             }
         );
+
+
+    // Boek knoppen
 
     document
         .querySelectorAll(
@@ -346,6 +418,10 @@ function renderRooms() {
         );
 
 }
+
+// ==========================================
+// KAMER BEWERKEN
+// ==========================================
 
 function editRoom(id) {
 
@@ -396,6 +472,10 @@ function editRoom(id) {
 
 }
 
+// ==========================================
+// BOEKING OPENEN
+// ==========================================
+
 function openBooking(id) {
 
     const room = rooms.find(room => room.id === id);
@@ -414,6 +494,10 @@ function openBooking(id) {
         .remove("hidden");
     bookingName.focus();
 }
+
+// ==========================================
+// BOEKING SLUITEN
+// ==========================================
 
 closeBooking.addEventListener(
     "click",
@@ -441,6 +525,10 @@ bookingModal.addEventListener(
         }
     }
 );
+
+// ==========================================
+// DATUMS WIJZIGEN
+// ==========================================
 
 checkIn.addEventListener("change", calculateBooking);
 checkOut.addEventListener("change", calculateBooking);
@@ -475,6 +563,10 @@ function calculateBooking() {
     bookingNights.textContent = nights;
     bookingTotal.textContent = formatPrice(total);
 }
+
+// ==========================================
+// BOEKING VERSTUREN
+// ==========================================
 
 bookingForm.addEventListener(
     "submit",
@@ -549,6 +641,11 @@ bookingForm.addEventListener(
         const note =
             bookingMessage.value.trim();
 
+
+        // ==================================
+        // EMAIL OPBOUWEN
+        // ==================================
+
         const subject =
             `Boekingsaanvraag - ${room.name}`;
 
@@ -607,12 +704,17 @@ ${note || "Geen opmerking"}
                 body
             )}`;
 
+        // Open e-mailprogramma
+
         window.location.href =
             mailto;
 
     }
 );
 
+// ==========================================
+// PRIJS OPMAAK
+// ==========================================
 function formatPrice(price) {
 
     return new Intl.NumberFormat(
@@ -624,13 +726,18 @@ function formatPrice(price) {
     ).format(price);
 
 }
-
+// ==========================================
+// DATUM OPMAAK
+// ==========================================
 function formatDate(date) {
     const parts =
         date.split("-");
     return `${parts[2]}-${parts[1]}-${parts[0]}`;
 }
 
+// ==========================================
+// DELETE MODAL
+// ==========================================
 
 function openDeleteModal(id) {
 
@@ -643,6 +750,8 @@ function openDeleteModal(id) {
     deleteModal.classList.remove("hidden");
 }
 
+
+// Annuleren
 cancelDelete.addEventListener("click", function () {
 
     roomToDelete = null;
@@ -652,6 +761,7 @@ cancelDelete.addEventListener("click", function () {
 });
 
 
+// Verwijderen bevestigen
 confirmDelete.addEventListener("click", function () {
 
     if (!isAdmin || roomToDelete === null) {
@@ -670,6 +780,10 @@ confirmDelete.addEventListener("click", function () {
     deleteModal.classList.add("hidden");
 
 });
+
+// ==========================================
+// HTML VEILIG MAKEN
+// ==========================================
 
 function escapeHTML(text) {
 

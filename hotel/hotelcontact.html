@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="topbar">
+    <header class="navbar">
       <nav>
         <div class="nav__header">
           <div class="nav__logo">
@@ -31,21 +31,74 @@
         </ul>
       </nav>
     </header>
-    <div class="contact-form">
-    <label for="vnaam">Voornaam</label>
-    <input type="text" id="vnaam" name="firstname" placeholder="Voornaam">
-    <label for="anaam">Achternaam</label>
-    <input type="text" id="anaam" name="lastname" placeholder="Achternaam">
-    <label for="email">E-mailadres</label>
-    <input type="text" id="email" name="email" placeholder="John@gmail.com">
-    <label for="subject">Onderwerp</label>
-    <input type="text" id="subject" name="subject" placeholder="Onderwerp">
-    <label for="message">Bericht</label>
-    <textarea id="message" name="message" placeholder="Hier uw bericht" style="height:100px"></textarea>
-    <input type="submit" value="Submit">
-
-  </form>
-</div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5760.6094109012065!2d4.62616136846262!3d52.62315918701645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47cf59004f8c58ad%3A0xa7c5edf3a50b1965!2sBed%20and%20Breakfast%20studio%20De%20Zonnevallei!5e0!3m2!1snl!2snl!4v1788948868774!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<section class="contact-section">
+    <div class="contact-intro">
+        <p class="subtitle">NEEM CONTACT OP</p>
+        <h1>Contact</h1>
+        <p>
+            Heeft u een vraag of wilt u meer informatie?
+            Vul hieronder het formulier in en neem contact met ons op.
+        </p>
+    </div>
+    <div class="contact-image">
+        <img src="assets/receptie.jpg" alt="Hotel De Zonne Vallei">
+    </div>
+    <div class="contact-bar"></div>
+    <form class="contact-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="voornaam">Voornaam</label>
+                <input
+                    type="text"
+                    id="voornaam"
+                    name="voornaam"
+                    placeholder="Uw voornaam"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="achternaam">Achternaam</label>
+                <input
+                    type="text"
+                    id="achternaam"
+                    name="achternaam"
+                    placeholder="Uw achternaam"
+                    required
+                >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="uw@email.nl"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="bericht">Uw bericht</label>
+            <textarea
+                id="bericht"
+                name="bericht"
+                placeholder="Waar kunnen wij u mee helpen?"
+                required
+            ></textarea>
+        </div>
+        <button type="submit" class="contact-button">
+            Verstuur bericht
+        </button>
+    </form>
+</section>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5760.6094109012065!2d4.62616136846262!3d52.62315918701645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47cf59004f8c58ad%3A0xa7c5edf3a50b1965!2sBed%20and%20Breakfast%20studio%20De%20Zonnevallei!5e0!3m2!1snl!2snl!4v1788948868774!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ </div>
   </body>
+          <footer id="contact">
+            <h2>De Zonne Vallei</h2>
+            <p>Hotel & Restaurant</p>
+            <p>Voorbeeldstraat 12 · Amsterdam</p>
+            <p>+31 20 123 45 67</p>
+        </footer>
 </html>
