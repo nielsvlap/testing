@@ -1,17 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
+    <title>Hotel Restaurant | La Belle</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
+
 <body>
-    <h1>hotel restaurant test</h1>
-    <p>testing</p>
+    <header class="navbar">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+              <a href="index.html">
+                <img src="assets/logo.png" alt="Hotel De Zonne Vallei">
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hotelkamers.html">Hotel Kamers</a></li>
+          <li><a href="hotelrestaurant.html">Restaurant</a></li>
+          <li><a href="hoteloverons.html">Over Ons</a></li>
+          <li><a href="hotelcontact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section id="restaurant" class="hero">
+            <img src="assets/hotelrestaurantkeuken.jpg">
+            <div class="hero-content">
+                <p class="subtitle">Hotel & Restaurant</p>
+                <h1>De Zonne Vallei</h1>
+                <p>
+                    Geniet van een sfeervol diner in ons stijlvolle
+                    hotelrestaurant.
+                </p>
+                <a href="#menu" class="button">Bekijk ons menu</a>
+            </div>
+        </section>
+        <section class="menu-nav">
+            <a href="#voorgerechten">Voorgerechten</a>
+            <a href="#hoofdgerechten">Hoofdgerechten</a>
+            <a href="#desserts">Desserts</a>
+            <a href="#dranken">Dranken</a>
+        </section>
+        <section id="menu" class="menu-section">
+            <div class="menu-intro">
+                <p>Onze kaart</p>
+                <h2>Menu</h2>
+                <p>
+                    Ontdek onze zorgvuldig samengestelde gerechten,
+                    bereid met verse en lokale ingrediënten.
+                </p>
+                  <h3>Openings Tijden</h3>
+                  <h4> Maandag t/m vrijdag</h4>
+                  <p>Ontbijt : 07:00 - 10:00</p>
+                  <p>Restaurant : 10:00 - 23:00</p>
+                  <h4>Zaterdag & zondag</h4>
+                  <p>Ontbijt : 08:00 - 10:30</p>
+                  <p>Restaurant : 10:30 - 23:00</p>
+            </div>
+            <div class="menu-image">
+                <img src="assets/menukaart.jpg" alt="Menukaart van het restaurant">
+                <div class="voorgerechten"></div>
+                <div></div>
+            </div>
+        </section>
+        <footer id="contact">
+            <h2>De Zonne Vallei</h2>
+            <p class="subtitle">Hotel & Restaurant</p>
+            <p class="subtitle">Jan Dirk Z'n Dal 69, 1931 DL Egmond aan Zee</p>
+            <p class="subtitle">+1-800-000-0000</p>
+        </footer>
+    </main>
 </body>
 </html>

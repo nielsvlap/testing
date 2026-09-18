@@ -11,7 +11,95 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hotel contact test</h1>
-    <p>testing</p>
-</body>
+    <header class="navbar">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+              <a href="index.html">
+                <img src="assets/logo.png" alt="Hotel De Zonne Vallei">
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hotelkamers.html">Hotel Kamers</a></li>
+          <li><a href="hotelrestaurant.html">Restaurant</a></li>
+          <li><a href="hoteloverons.html">Over Ons</a></li>
+          <li><a href="hotelcontact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+<section class="contact-section">
+    <div class="contact-intro">
+        <p class="subtitle2">NEEM CONTACT OP</p>
+        <h1>Contact</h1>
+        <p>
+            Heeft u een vraag of wilt u meer informatie?
+            Vul hieronder het formulier in en neem contact met ons op.
+        </p>
+    </div>
+    <div class="contact-image">
+        <img src="assets/receptie.jpg" alt="Hotel De Zonne Vallei">
+    </div>
+    <div class="contact-bar"></div>
+    <form class="contact-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="voornaam">Voornaam</label>
+                <input
+                    type="text"
+                    id="voornaam"
+                    name="voornaam"
+                    placeholder="Uw voornaam"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="achternaam">Achternaam</label>
+                <input
+                    type="text"
+                    id="achternaam"
+                    name="achternaam"
+                    placeholder="Uw achternaam"
+                    required
+                >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="uw@email.nl"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="bericht">Uw bericht</label>
+            <textarea
+                id="bericht"
+                name="bericht"
+                placeholder="Waar kunnen wij u mee helpen?"
+                required
+            ></textarea>
+        </div>
+        <button type="submit" class="contact-button">
+            Verstuur bericht
+        </button>
+    </form>
+</section>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5760.6094109012065!2d4.62616136846262!3d52.62315918701645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47cf59004f8c58ad%3A0xa7c5edf3a50b1965!2sBed%20and%20Breakfast%20studio%20De%20Zonnevallei!5e0!3m2!1snl!2snl!4v1788948868774!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ </div>
+  </body>
+        <footer id="contact">
+            <h2>De Zonne Vallei</h2>
+            <p class="subtitle">Hotel & Restaurant</p>
+            <p class="subtitle">Jan Dirk Z'n Dal 69, 1931 DL Egmond aan Zee</p>
+            <p class="subtitle">+1-800-000-0000</p>
+        </footer>
 </html>

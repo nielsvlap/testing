@@ -1,34 +1,55 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
-    <link rel="stylesheet" href="style.css">
-    <title>hotel opdracht</title>
-</head>
-<body>
-    <header>
-        <nav>
-               <div class="nav__header">
-                <div class="nav__logo">
-                 <a href="#">N.V</a>
-               </div>
-               <div class="nav__menu__btn" id="menu-btn">
-                <i class="ri-menu-5-line"></i>
-               </div>
-            </div>
-            <ul class="nav__links" id="navlinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="hotelkamers.html" target="_self">Kamers</a></li>
-                <li><a href="hotelrestaurant.html">Restaurant</a></li>
-                <li><a href="hoteloverons.html">Over ons</a></li>
-                <li><a href="hotelcontact.html">Contact</a></li>
-            </ul>
-        </nav>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hotel De Zonne Vallei</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+              <a href="index.html">
+                <img src="assets/logo.png" alt="Hotel De Zonne Vallei">
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hotelkamers.html">Hotel Kamers</a></li>
+          <li><a href="hotelrestaurant.html">Restaurant</a></li>
+          <li><a href="hoteloverons.html">Over Ons</a></li>
+          <li><a href="hotelcontact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <main></main>
     </header>
+    <section id="restaurant" class="hero">
+            <img src="assets/hotelpool.jpg" alt="hotel foto">
+            <div class="hero-content">
+                <p class="subtitle">Hotel & Restaurant</p>
+                <h1>De Zonne Vallei</h1>
+                <p>
+                    Geniet van een ontspannen verblijf in ons luxe hotel met zwembad en restaurant.
+                </p>
+                <a href="hotelkamers.html" class="button">Bekijk onze kamers!</a>
+            </div>
+        </section>
+    <script src="main.js"></script>
 </body>
+        <footer id="contact">
+            <h2>De Zonne Vallei</h2>
+            <p class="subtitle">Hotel & Restaurant</p>
+            <p class="subtitle">Jan Dirk Z'n Dal 69, 1931 DL Egmond aan Zee</p>
+            <p class="subtitle">+1-800-000-0000</p>
+        </footer>
 </html>
